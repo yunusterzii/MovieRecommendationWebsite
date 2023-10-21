@@ -27,6 +27,12 @@ header {
     width: 100%;
 }
 
+.home_btn {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
 .search {
     background-color: transparent;
     border: 2px solid var(--primary-color);

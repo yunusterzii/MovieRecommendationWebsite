@@ -34,4 +34,17 @@ const searchQuery = async (query) => {
     return result;
 }
 
-export { submitRates, searchQuery };
+const getMovies = async () => {
+    let result = "";
+    await api.get("/getMovies/")
+    .then((response) => {
+        console.log("getMovies - status code " + response.status);
+        result = response.data;
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+    return result;
+}
+
+export { submitRates, searchQuery, getMovies};

@@ -11,13 +11,14 @@ const Footer = ({rates, setLoading, movies}) => {
         const movieList = await submitRates(data);
         console.log(movieList);
         movies.current = movieList;
+        rates.current = [];
         setLoading(false);
     }
 
     return(
         <div>
-            <div class="submitation">
-                <button class="sbmt" onClick={submitClick} type="submit">Submit</button>
+            <div className="submitation">
+                <button className="sbmt" onClick={submitClick} type="submit">Submit</button>
             </div>
         </div>
     )

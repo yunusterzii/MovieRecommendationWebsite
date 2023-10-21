@@ -9,7 +9,10 @@ const MoviePage = ({isLoading, setLoading, movies, searchMovies}) => {
 
     if(isLoading) {
         return(
-            <div>LOADING</div>
+            <div>
+                <Navbar setLoading={setLoading} searchMovies={searchMovies} />
+                <div>LOADING</div>
+            </div>
         )
     }
     else{

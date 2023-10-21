@@ -9,6 +9,7 @@ import SearchPage from './pages/SearchPage';
 
 function App() {
   const [isLoading, setLoading] = useState(false);
+  const [randomMovies, setRandomMovies] = useState(null);
   const movies = useRef([]);
   const searchMovies = useRef([]);
   const rates = useRef([]);
@@ -16,7 +17,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route exact path="/" element={<HomePage isLoading={isLoading} setLoading={setLoading} movies={movies} searchMovies={searchMovies} rates={rates} />}/>
+        <Route exact path="/" element={<HomePage isLoading={isLoading} setLoading={setLoading} movies={movies} searchMovies={searchMovies} rates={rates} randomMovies={randomMovies} setRandomMovies={setRandomMovies} />}/>
         <Route exact path="/movies" element={<MoviePage isLoading={isLoading} setLoading={setLoading} movies={movies} searchMovies={searchMovies} />}/>
         <Route exact path="/search" element={<SearchPage isLoading={isLoading} setLoading={setLoading} searchMovies={searchMovies} rates={rates} movies={movies} />}/>
       </Routes>
