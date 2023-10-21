@@ -16,7 +16,6 @@ const MovieCard = ({id, rates, recommended}) => {
                 setFound(true);
             })
             .catch((error) => {
-                console.log(error);
                 setFound(false);
             });
     }, [id, recommended])
@@ -41,7 +40,7 @@ const MovieCard = ({id, rates, recommended}) => {
                         <div><a style={{textDecoration: "none"}} alt="imdb" target="_blank" src="https://img.icons8.com/color/48/imdb.png" href={"https://www.imdb.com/title/" + movie.imdb_id}><img src="https://img.icons8.com/color/48/imdb.png" alt="imdb" style={{fontSize: '1.75rem', color: "white"}}></img></a></div>
                     </div>
                     {!recommended && <div className="rating">
-                        <Rating value={rates.current.find(movie => movie.movieID === id)?.value * 2 || rate} disabled={rateDisabled || rates.current.find(movie => movie.movieID === id)} onChange={(e) => {setRate(e.value); console.log(e.value)}} cancel={false} stars={10} />
+                        <Rating value={rates.current.find(movie => movie.movieID === id)?.value * 2 || rate} disabled={rateDisabled || rates.current.find(movie => movie.movieID === id)} onChange={(e) => setRate(e.value)} cancel={false} stars={10} />
                     </div>}
                     {!recommended && <div className="mini-button-div">
                         {!recommended && !rateDisabled && !(rates.current.find(movie => movie.movieID === id)) && <button className="rate-button" onClick={click} disabled={rate === 0}>Rate</button>}

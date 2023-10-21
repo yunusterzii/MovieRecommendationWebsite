@@ -9,7 +9,6 @@ const Footer = ({rates, setLoading, movies}) => {
         const data = rates.current;
         setLoading(true);
         const movieList = await submitRates(data);
-        console.log(movieList);
         movies.current = movieList;
         rates.current = [];
         setLoading(false);
